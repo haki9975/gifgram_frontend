@@ -7,11 +7,11 @@ import React from 'react'
             <form>
                 <div>
                     <label>Username:</label><br />
-                    <input type="text" /><br />
+                    <input type="text" name="username" /><br />
                 </div>
                 <div>
                     <label>Image Source URL:</label><br />
-                    <input type="text" />
+                    <input type="text" name="image" />
                 </div>
             </form>
         </div>
