@@ -4,6 +4,16 @@ import React from 'react'
     return (
         <div>
             <h1>Post Form</h1>
+            <form>
+                <div>
+                    <label>Username:</label><br />
+                    <input type="text" />
+                </div>
+                <div>
+                    <label>Image Source URL:</label>
+                    <input type="text" />
+                </div>
+            </form>
         </div>
     )
 }
