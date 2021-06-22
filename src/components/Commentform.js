@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function Commentform() {
+function Commentform() {
     return (
         <div>
             
         </div>
     )
 }
+
+export default Commentform;

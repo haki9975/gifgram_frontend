@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function Postform() {
+ function Postform() {
     return (
         <div>
             
         </div>
     )
 }
+
+export default Postform;

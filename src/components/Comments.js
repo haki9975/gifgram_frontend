@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function Comments() {
+ function Comments() {
     return (
         <div>
             
         </div>
     )
 }
+
+export default Comments;
