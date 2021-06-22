@@ -7,10 +7,10 @@ import React from 'react'
             <form>
                 <div>
                     <label>Username:</label><br />
-                    <input type="text" />
+                    <input type="text" /><br />
                 </div>
                 <div>
-                    <label>Image Source URL:</label>
+                    <label>Image Source URL:</label><br />
                     <input type="text" />
                 </div>
             </form>
