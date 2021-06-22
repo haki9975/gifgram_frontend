@@ -6,11 +6,11 @@ function Commentform() {
             <h1>Comment Form</h1>
             <div>
                 <label>Username:</label><br />
-                <input type="text"></input><br />
+                <input type="text" name="username"></input><br />
             </div>
             <div>
                 <label>Comment:</label><br />
-                <input type="text"></input>
+                <textarea name="body"></textarea>
             </div>
 
         </div>
