@@ -9,14 +9,14 @@ import Commentform from './components/Commentform';
 
 function App() {
   return (
-    <Provider >
+    <Provider store={store}>
      <div className="App">
        <Posts />
         <Postform />
         <Comments />
         <Commentform />
       </div>
-    <Provider />
+    </Provider >
   );
 }
 
