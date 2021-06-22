@@ -9,3 +9,13 @@ export const fetchPosts = () => {
                 }))
     
 }
+
+export const sendPosts = () => {
+    fetch('https://localhost3000/posts/new')
+        .then(response => response.json())
+            .then (data => dispatch({
+                type: FETCH_POSTS,
+                payload: data
+            }))
+
+}
