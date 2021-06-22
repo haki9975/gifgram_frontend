@@ -10,4 +10,4 @@ function Posts() {
     )
 }
 
-export default Posts;
+export default connect(null, { fetchPosts })(Posts)

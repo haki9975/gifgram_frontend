@@ -14,7 +14,7 @@ export const sendPosts = () => {
     fetch('https://localhost3000/posts/new')
         .then(response => response.json())
             .then (data => dispatch({
-                type: FETCH_POSTS,
+                type: NEW_POST,
                 payload: data
             }))
 
