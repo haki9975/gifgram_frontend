@@ -13,6 +13,8 @@ import React from 'react'
                     <label>Image Source URL:</label><br />
                     <input type="text" name="image" />
                 </div>
+                <br />
+                <button type="submit">Submit</button>
             </form>
         </div>
     )
