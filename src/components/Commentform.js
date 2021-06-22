@@ -12,6 +12,8 @@ function Commentform() {
                 <label>Comment:</label><br />
                 <textarea name="body"></textarea>
             </div>
+            <br />
+            <button type="submit">Submit</button>
 
         </div>
     )
