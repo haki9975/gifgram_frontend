@@ -24,6 +24,10 @@ class Commentform extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         alert("A comment was submitted:" + this.state.value);
+        this.setState({
+            username: "",
+            body: ""
+        })
     }
 
         render(){
