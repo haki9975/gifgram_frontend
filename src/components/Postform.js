@@ -17,8 +17,7 @@ import React from 'react'
          const image = target.image
 
          this.setState({
-             username: username,
-             image: image
+             [target.name]: target.value
          })
      }
 

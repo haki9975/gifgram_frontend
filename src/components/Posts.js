@@ -2,6 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { fetchPosts, newPosts } from '../actions/postActions'
 
+useEffect(() => {
+    (fetchPosts())
+    return () => {
+        cleanup
+    }
+}, [input])
+
 function Posts() {
     const postItems = this.state.posts.map(post => (
         <div key={post.id}>

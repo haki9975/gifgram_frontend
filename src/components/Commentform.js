@@ -17,8 +17,7 @@ class Commentform extends React.Component {
         const body = target.body
 
         this.setState({
-            username: username,
-            body: body
+            [target.name]: target.value
         })
     }
 
