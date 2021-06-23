@@ -24,6 +24,10 @@ import React from 'react'
      handleSubmit(e) {
         e.preventDefault();
         alert("A post was submitted:" + this.state.value)
+        this.setState({
+            username: "",
+            image: ""
+        })
      }
     
     return() {
