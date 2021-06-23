@@ -13,8 +13,8 @@ import React from 'react'
 
      handleChange(e) {
          const target = e.target
-         const username = target.username
-         const image = target.image
+        //  const username = target.username
+        //  const image = target.image
 
          this.setState({
              [target.name]: target.value
@@ -30,7 +30,7 @@ import React from 'react'
         })
      }
     
-    return() {
+   render() {
      return (
          <div>
              <h1>Post Form</h1>
