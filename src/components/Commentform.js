@@ -23,9 +23,9 @@ class Commentform extends React.Component {
                    <h1>Comment Form</h1>
                    <form onSumit={this.handleSubmit}>
                         <label>Username:</label><br />
-                        <input type="text" name="username"></input><br />
+                        <input type="text" name="username" value={this.state.value} onChange={this.handleChange} /><br />
                         <label>Comment:</label><br />
-                        <textarea name="body"></textarea>
+                        <textarea name="body" value={this.state.value} onChange={this.handleChange} />
                         <button type="submit">Submit</button>
                     </form>
                 </div>
