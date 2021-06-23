@@ -3,7 +3,10 @@ import React from 'react'
 class Commentform extends React.Component {
     constructor(props){
         super(props);
-        this.state = {value: ""};
+        this.state = {
+            username: "",
+            body: ""
+        };
         this.handleChange.bind(this);
         this.handleSubmit.bind(this);
     }
