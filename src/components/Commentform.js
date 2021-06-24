@@ -1,29 +1,29 @@
 import React from 'react'
 
 class Commentform extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            username: "",
-            body: ""
-        };
+    state = {
+        username: "",
+        body: ""
+    };
+    constructor(){
+        super();
         this.handleChange.bind(this);
         this.handleSubmit.bind(this);
     }
 
-    handleChange(e) {
+    handleChange = (e) => {
+        console.log(e)
         const target = e.target;
         // const username = target.username
         // const body = target.body
-
-        this.setState({
+            this.setState({
             [target.name]: target.value
         })
     }
 
-    handleSubmit(e) {
+    handleSubmit = (e) => {
         e.preventDefault();
-        alert("A comment was submitted:" + this.state.value);
+        alert("A comment was submitted: " + this.state.value);
         this.setState({
             username: "",
             body: ""
@@ -34,7 +34,7 @@ class Commentform extends React.Component {
             return(
                 <div>
                    <h1>Comment Form</h1>
-                   <form onSumit={this.handleSubmit}>
+                   <form onSubmit={this.handleSubmit}>
                         <label>Username:</label><br />
                         <input type="text" name="username" value={this.state.username} onChange={this.handleChange} /><br />
                         <label>Comment:</label><br />
