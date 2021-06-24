@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+import { fetchPosts } from './asynch';
+import { connect } from 'react-redux';
+import { setPosts } from '../redux/commentSlice'
 
  function Comments() {
     return (

@@ -1,16 +1,14 @@
-import React from 'react'
-// import { connect } from 'react-redux';
+import React from 'react';
+import { fetchPosts } from './asynch';
+import { connect } from 'react-redux';
+import { setPosts } from '../redux/postSlice';
+
 
 
 
 
 function Posts() {
-    // const postItems = this.state.posts.map(post => (
-    //     <div key={post.id}>
-    //         <h3>{post.username}</h3>
-    //         <img src={post.image}></img>
-    //     </div>
-    // ))
+ 
     return (
         <div>
             <h1>Posts</h1>
