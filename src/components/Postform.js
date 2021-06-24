@@ -1,29 +1,28 @@
 import React from 'react'
 
  class Postform extends React.Component {
-     constructor(props){
-         super(props);
-         this.state = {
-             username: "",
-             image: ""
-            }
+     state = {
+         username: "",
+         image: ""
+        }
+     constructor(){
+         super();
         this.handleChange.bind(this);
         this.handleSubmit.bind(this);
      }
 
-     handleChange(e) {
+     handleChange = (e) => {
          const target = e.target
-        //  const username = target.username
-        //  const image = target.image
-
-         this.setState({
+         console.log(target)
+        this.setState({
              [target.name]: target.value
          })
      }
 
-     handleSubmit(e) {
+     handleSubmit = (e) => {
+         console.log(this)
         e.preventDefault();
-        alert("A post was submitted:" + this.state.value)
+        alert("A post was submitted: " + this.state.value)
         this.setState({
             username: "",
             image: ""
