@@ -20,9 +20,9 @@ import React from 'react'
      }
 
      handleSubmit = (e) => {
-         console.log(this)
+         console.log(this.state)
         e.preventDefault();
-        alert("A post was submitted: " + this.state.value)
+        alert("A post was submitted: " + this.state.image)
         this.setState({
             username: "",
             image: ""
