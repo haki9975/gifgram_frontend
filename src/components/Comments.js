@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { fetchPosts } from './asynch';
+
 import { connect } from 'react-redux';
 import { setComments, setPosts } from '../redux/commentSlice'
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { fetchPosts } from './asynch';
+//import  fetchPosts  from '../redux/asynch';
 import { useSelector, useDispatch } from 'react-redux';
-import { setPosts } from '../redux/postSlice';
+import { fetchPosts } from '../redux/postSlice';
 // import Card from './Card';
 
 
@@ -16,10 +16,10 @@ function Posts() {
 
     useEffect(() => {
         console.log('mounting posts')
-        fetchPosts("posts")
-            .then(data =>{ console.log(data); dispatch(setPosts(data))})
-                .catch( a => console.log(a))
-            
+       // fetchPosts
+            // .then(data =>{ console.log(data); dispatch(setPosts(data))})
+                // .catch( a => console.log(a))
+            dispatch(fetchPosts())
         return () => {
             console.log('unmounting posts')
         }
