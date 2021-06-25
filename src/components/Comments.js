@@ -4,14 +4,14 @@ import { connect } from 'react-redux';
 import { setComments, setPosts } from '../redux/commentSlice'
 
  function Comments() {
-     console.log("fetch posts")
-    useEffect(() => {
-        fetchPosts()
-            .then(data => setComments(data))
-        return () => {
-            console.log("unmount posts")
-        }
-    }, [setComments])
+//      console.log("hello from comments")
+//     useEffect(() => {
+//         fetchPosts()
+//             .then(data => setComments(data))
+//         return () => {
+//             console.log("goodbye from comments")
+//         }
+//     }, [setComments])
 
     return (
         <div>
