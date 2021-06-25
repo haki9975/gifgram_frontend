@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 // import { fetchPosts } from './asynch';
 import { useSelector, useDispatch } from 'react-redux';
 import { setPosts } from '../redux/postSlice';
+import Card from './Card';
 
 
  
