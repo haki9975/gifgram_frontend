@@ -27,12 +27,11 @@ function Posts() {
 
  
     return (
-        <div>
+        <div >
             <h1>Posts</h1>
-            <ul>
-               <div>{posts.map((p) => <h1>{p.username}</h1>)} </div> <br />
-               <div>{posts.map((p) => <img src={p.image}></img> )}</div>
-            </ul>
+            <div>
+               {posts.map((p, i) => <div><h1 >{p.username}</h1><br /> <img src={p.image} ></img>       </div> )} <br />
+            </div>
         </div>
     )
 }
