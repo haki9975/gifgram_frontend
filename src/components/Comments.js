@@ -1,21 +1,14 @@
 import React, { useEffect } from 'react';
 
-import { connect } from 'react-redux';
-import { setComments, setPosts } from '../redux/commentSlice'
 
- function Comments() {
-//      console.log("hello from comments")
-//     useEffect(() => {
-//         fetchPosts()
-//             .then(data => setComments(data))
-//         return () => {
-//             console.log("goodbye from comments")
-//         }
-//     }, [setComments])
+ function Comments(props) {
 
     return (
         <div>
             <h1>Comments</h1>
+            <p>Username: {props.username}</p>
+            <p>Comment: {props.body}</p>
+            <p>Date: {props.date}</p>
         </div>
     )
 }

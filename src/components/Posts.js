@@ -16,13 +16,13 @@ function Posts() {
 
 
     useEffect(() => {
-        console.log('mounting posts')
+        // console.log('mounting posts')
        // fetchPosts
             // .then(data =>{ console.log(data); dispatch(setPosts(data))})
                 // .catch( a => console.log(a))
             dispatch(fetchPosts())
         return () => {
-            console.log('unmounting posts')
+            // console.log('unmounting posts')
         }
     }, [])
 
@@ -33,10 +33,10 @@ function Posts() {
            
 
                {posts.map((p, i) => 
-               <div>
+               <div> {console.log(p.comments[0].username)}
                     <h1 >{p.username}</h1><br />
                     <img src={p.image} ></img>
-                    <Comments props={p.comments}></Comments>       
+                    <Comments username={p.comments[0].username} date={p.comments[0].date} body={p.comments[0].body}></Comments>       
                 </div> )} 
            
             
