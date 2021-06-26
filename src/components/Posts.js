@@ -29,15 +29,16 @@ function Posts() {
            
 
                {posts.map((p, i) => 
-               <div> {console.log(p)}
-            {/* //    <div key={p.id}> {console.log(p.comments[0].username)}
-            //         <h1 >{p.username}</h1><br />
-            //         <img src={p.image} alt="A beautiful scene"></img>
-            //         <Comments username={p.comments[0].username} date={p.comments[0].date} body={p.comments[0].body}></Comments>        */}
+              
+               <div key={p.id}> 
+                     <h1 >{p.username}</h1><br />
+                     <img src={p.image} alt="A beautiful scene"></img>
+                     <div>{p.comments.map((c) => (<Comments username={c.username} body={c.body} date={c.date} key={c.id}></Comments>))} </div>      
                 </div> )} 
+        </div>
            
             
-        </div>
+        
     )
 }
 
