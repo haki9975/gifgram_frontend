@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 //import  fetchPosts  from './asynch';
 
 export const fetchPosts = createAsyncThunk(
-    'posts/requestStatus',
+    'posts/getPosts',
     async () => {
         const response = await fetch('http://localhost:3000/posts')
         const posts = await response.json()
@@ -13,7 +13,13 @@ export const fetchPosts = createAsyncThunk(
 )
 
 export const sendPosts = createAsyncThunk(
-    
+    'posts/newPost',
+    async () => {
+        const response = await fetch('http://localhost:3000/posts')
+        const posts = await response.json()
+        return posts
+    }
+
 )
 
 
