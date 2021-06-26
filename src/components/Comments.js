@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
  function Comments(props) {
 
     return (
-        <div>
+        <div key={props.id}>
             <h1>Comments</h1>
             <p>Username: {props.username}</p>
             <p>Comment: {props.body}</p>

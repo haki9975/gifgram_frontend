@@ -33,7 +33,7 @@ function Posts() {
            
 
                {posts.map((p, i) => 
-               <div> {console.log(p.comments[0].username)}
+               <div key={p.id}> {console.log(p.comments[0].username)}
                     <h1 >{p.username}</h1><br />
                     <img src={p.image} ></img>
                     <Comments username={p.comments[0].username} date={p.comments[0].date} body={p.comments[0].body}></Comments>       

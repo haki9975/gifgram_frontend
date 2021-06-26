@@ -11,6 +11,17 @@ class Commentform extends React.Component {
         this.handleSubmit.bind(this);
     }
 
+    componentDidMount(){
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-type' : 'application/json' },
+            body: { JSON.stringify() }
+        }
+        fetch('http://localhost:3000/comments')
+        .then(resp => resp.JSON)
+        .then(data => console.log(data))
+    }
+
     handleChange = (e) => {
         console.log(e)
         const target = e.target;
@@ -24,6 +35,7 @@ class Commentform extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
         alert("A comment was submitted: " + this.state.body);
+        //Call .fetch() here to send comment to DB
         this.setState({
             username: "",
             body: ""
