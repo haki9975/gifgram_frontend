@@ -1,9 +1,13 @@
 import React from 'react'
+import { connect } from 'react-redux';
+import { sendPosts } from '../redux/postSlice';
 
  class Postform extends React.Component {
-     state = {
+     state = { 
+         formInput: {
          username: "",
-         image: ""
+         image: "" },
+         posts: []
         }
      constructor(){
          super();
@@ -11,21 +15,29 @@ import React from 'react'
         this.handleSubmit.bind(this);
      }
 
+     
+
+
      handleChange = (e) => {
          const target = e.target
-         console.log(target)
-        this.setState({
-             [target.name]: target.value
+         this.setState({
+             formInput: {
+                 ...this.state.formInput,
+                 [target.name]: target.value
+             }
          })
-     }
+        }
 
-     handleSubmit = (e) => {
-         console.log(this.state)
+     handleSubmit = (e, formInput) => {
+         const target = e.target
         e.preventDefault();
-        alert("A post was submitted: " + this.state.image)
+         this.props.addPost(formInput)
+        alert("A post was submitted: ")
         this.setState({
+            post: {
             username: "",
             image: ""
+            }
         })
      }
     
@@ -33,16 +45,25 @@ import React from 'react'
      return (
          <div>
              <h1>Post Form</h1>
-             <form onSubmit={this.handleSubmit}>
+             <form onSubmit={(e) => this.handleSubmit(e, this.state.formInput)}>
                  <label>Username:</label><br />
-                 <input type="text" name="username" value={this.state.username} onChange={this.handleChange} /><br />
+                 <input type="text" name="username" value={this.state.formInput.username} onChange={this.handleChange} /><br />
                  <label>Image Source URL:</label><br />
-                 <input type="text" name="image" value={this.state.image} onChange={this.handleChange}/><br />
+                 <input type="text" name="image" value={this.state.formInput.image} onChange={this.handleChange}/><br />
                  <button type="submit">Submit</button>
              </form>
          </div>
      )
     }
+    
+    
 }
 
-export default Postform;
+const mapDispatchToProps = (dispatch) => {
+    return{
+        addPost: (post) => {
+            dispatch(sendPosts(post))
+        }
+    }
+}
+export default connect(null, mapDispatchToProps)(Postform)

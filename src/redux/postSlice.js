@@ -14,17 +14,17 @@ export const fetchPosts = createAsyncThunk(
 
 export const sendPosts = createAsyncThunk(
     'posts/newPost',
-    async (state) => {
+    async (formInput) => {
         const response = await fetch('http://localhost:3000/posts',
         {
             method: "POST",
             headers: {
                 "Content-Type":"application/json"
             },
-            body: JSON.stringify(state)
+            body: JSON.stringify(formInput)
         })
-        const posts = await response.json()
-        return posts
+        const data = await response.json()
+        return data
     }
 
 )
@@ -41,7 +41,10 @@ const postsSlice = createSlice({
         builder.addCase(fetchPosts.fulfilled, (state, action) => {
             
             return state = action.payload
-        }).addCase(sendPosts.fulfilled, (state, action.payload))
+        })
+        // .addCase(sendPosts.fulfilled, (state, action))
+        // console.log(action.payload)
+        // return action.payload
     }
 })
 
