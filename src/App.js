@@ -5,6 +5,7 @@ import React from 'react';
 import Posts from './components/Posts';
 import NavBar from './components/Navbar';
 import Postform from './components/Postform';
+import Home from './components/Home'
 
 import {
   BrowserRouter as Router,
@@ -24,9 +25,15 @@ function App() {
         <Router>
          <NavBar></NavBar>
           <Switch>
-            
-            <Posts />
-            <Postform />
+            <Route path="/home">
+              <Home />
+            </Route>
+            <Route path="/posts">
+              <Posts />
+            </Route>
+            <Route path="/post/new">
+              <Postform />
+            </Route>
 
           </Switch>
         </Router>
