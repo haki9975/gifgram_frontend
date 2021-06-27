@@ -19,8 +19,10 @@ function App() {
   return (
     <Provider store={store} >
      <div className="App">
-       <Posts />
-        <Postform />
+        <Router>
+         <Posts />
+         <Postform />
+        </Router>
      </div>
      </Provider >
   );
