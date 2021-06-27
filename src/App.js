@@ -4,6 +4,8 @@ import React from 'react';
  import store from './redux/store';
 import Posts from './components/Posts';
 import NavBar from './components/Navbar';
+import Postform from './components/Postform';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,8 +23,12 @@ function App() {
      <div className="App">
         <Router>
          <NavBar></NavBar>
-         <Posts />
-         
+          <Switch>
+            
+            <Posts />
+            <Postform />
+
+          </Switch>
         </Router>
      </div>
      </Provider >
