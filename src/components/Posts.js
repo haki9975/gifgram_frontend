@@ -35,6 +35,7 @@ function Posts() {
                <div key={p.id} id={p.id}> 
                      <h1 >{p.username}</h1><br />
                      <img src={p.image} alt="A beautiful scene"></img>
+                     <h1>Comments</h1>
                      <div>{p.comments.map((c) => (<Comments username={c.username} body={c.body} date={c.date} key={c.id} id={p.id}></Comments>))}
                 </div>
                 <div>

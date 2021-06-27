@@ -6,10 +6,10 @@ import React from 'react';
 
     return (
         <div key={props.id}>
-            <h1>Comments</h1>
-            <p>Username: {props.username}</p>
+           <p>Username: {props.username}</p>
             <p>Comment: {props.body}</p>
-            <p>Date: {props.date}</p>
+            <p>Date: {props.date}</p><br />
+            <p>--------------------------------</p>
             
         </div>
     )
