@@ -4,8 +4,11 @@ import { sendComments } from '../redux/commentsSlice'
 
 class Commentform extends React.Component {
     state = {
+        formInput: {
         username: "",
-        body: ""
+        body: "",
+        comments: []
+        }
     };
     constructor(){
         super();
