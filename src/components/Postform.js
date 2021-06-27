@@ -29,8 +29,7 @@ import { sendPosts } from '../redux/postSlice';
         }
 
      handleSubmit = (e, formInput) => {
-         const target = e.target
-        e.preventDefault();
+         e.preventDefault();
          this.props.addPost(formInput)
         alert("A post was submitted: ")
         this.setState({

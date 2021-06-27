@@ -20,23 +20,27 @@ class CommentForm extends React.Component {
     
         
     handleChange = (e) => {
-        console.log(e)
+        
         const target = e.target;
         this.setState({
            formInput: {
                ...this.state.formInput,
-               [target.name]: target.value
+               [target.name]: target.value,
+               post_id:  target.id
            }
         })
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = (e, formInput) => {
         e.preventDefault();
+        console.log(this.state)
         alert("A comment was submitted: " + this.state.formInput.body);
+        this.props.addComments(formInput)
         this.setState({
             formInput: {
                 username: "",
-                body: ""
+                body: "",
+                post_id: ""
             }
         })
     }
@@ -45,7 +49,7 @@ class CommentForm extends React.Component {
             return(
                 <div>
                    <b><p>Add Comment:</p></b>
-                   <form  onSubmit={this.handleSubmit}>
+                   <form  onSubmit={(e) => this.handleSubmit(e, this.state.formInput)}>
                         <label >Username:</label><br />
                         <input id={this.props.id} type="text" name="username" value={this.state.username} onChange={this.handleChange} /><br />
                         <label>Comment:</label><br />
