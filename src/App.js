@@ -4,6 +4,7 @@ import React from 'react';
  import store from './redux/store';
 import Posts from './components/Posts';
 import Postform from './components/Postform';
+import NavBar from './components/Navbar';
 import {
   BrowserRouter as Router,
   Switch,
