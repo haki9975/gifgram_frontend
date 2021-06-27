@@ -1,5 +1,11 @@
 import React from 'react';
 import Postform from './components/Postform';
+import {
+    BrowserRouter as Browser,
+    Switch,
+    Route,
+    Link
+} from 'react-router-dom'
 
 function NavBar() {
     return(
