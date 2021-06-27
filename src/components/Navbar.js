@@ -1,5 +1,5 @@
 import React from 'react';
-import Postform from './components/Postform';
+// import Postform from './components/Postform';
 import {
     BrowserRouter as Browser,
     Switch,
@@ -10,13 +10,13 @@ import {
 function NavBar() {
     return(
         <div id="navbar">
-            <Link>
+            <Link to="/home">
                 <h2 id="home">Home</h2>
             </Link>
-            <Link>
+            <Link to="/posts">
                 <h2 id="posts">View Posts</h2>
             </Link>
-            <Link>
+            <Link to="/post">
                 <h2 id="newPost">Add Post</h2>
             </Link>
         </div>
