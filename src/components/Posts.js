@@ -30,7 +30,7 @@ function Posts() {
 
                {posts.map((p, i) => 
               
-               <div key={p.id}> 
+               <div key={p.id} class={p.id}> 
                      <h1 >{p.username}</h1><br />
                      <img src={p.image} alt="A beautiful scene"></img>
                      <div>{p.comments.map((c) => (<Comments username={c.username} body={c.body} date={c.date} key={c.id}></Comments>))} </div>      

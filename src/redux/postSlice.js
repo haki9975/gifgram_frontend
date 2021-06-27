@@ -29,6 +29,24 @@ export const sendPosts = createAsyncThunk(
 
 )
 
+export const sendComments = createAsyncThunk(
+    'comments/newComment',
+    async (formInput) => {
+        const response = await fetch('http://localhost:3000/comments',
+        {
+            method: "POST",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(formInput)
+        })
+        const data = await response.json()
+        return data
+    }
+)
+
+
+
 
 
 const postsSlice = createSlice({
