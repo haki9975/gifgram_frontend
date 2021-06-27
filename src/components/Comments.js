@@ -1,4 +1,5 @@
 import React from 'react';
+import Commentform from './Commentform';
 
 
  function Comments(props) {
@@ -9,6 +10,7 @@ import React from 'react';
             <p>Username: {props.username}</p>
             <p>Comment: {props.body}</p>
             <p>Date: {props.date}</p>
+            <Commentform id={props.id}></Commentform>
         </div>
     )
 }

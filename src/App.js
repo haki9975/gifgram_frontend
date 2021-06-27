@@ -5,8 +5,7 @@ import React from 'react';
 
 import Posts from './components/Posts';
 import Postform from './components/Postform';
-import Comments from './components/Comments';
-import Commentform from './components/Commentform';
+
 
 
 
@@ -17,9 +16,7 @@ function App() {
      <div className="App">
        <Posts />
         <Postform />
-        <Comments />
-        <Commentform />
-      </div>
+     </div>
      </Provider >
   );
 }

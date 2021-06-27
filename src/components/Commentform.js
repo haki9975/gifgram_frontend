@@ -2,16 +2,17 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { sendComments } from '../redux/commentSlice'
 
-class Commentform extends React.Component {
+class CommentForm extends React.Component {
     state = {
         formInput: {
         username: "",
         body: "",
+        post_id: "",
         comments: []
         }
     };
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.handleChange.bind(this);
         this.handleSubmit.bind(this);
     }
@@ -43,12 +44,12 @@ class Commentform extends React.Component {
         render(){
             return(
                 <div>
-                   <h1>Comment Form</h1>
-                   <form onSubmit={this.handleSubmit}>
-                        <label>Username:</label><br />
-                        <input type="text" name="username" value={this.state.username} onChange={this.handleChange} /><br />
+                   <b><p>Add Comment:</p></b>
+                   <form  onSubmit={this.handleSubmit}>
+                        <label >Username:</label><br />
+                        <input id={this.props.id} type="text" name="username" value={this.state.username} onChange={this.handleChange} /><br />
                         <label>Comment:</label><br />
-                        <textarea name="body" value={this.state.body} onChange={this.handleChange} /><br />
+                        <textarea id={this.props.id} name="body" value={this.state.body} onChange={this.handleChange} /><br />
                         <button type="submit">Submit</button>
                     </form>
                 </div>
@@ -65,4 +66,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(Commentform);
+export default connect(null, mapDispatchToProps)(CommentForm);
