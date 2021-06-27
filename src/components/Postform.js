@@ -12,7 +12,7 @@ import { sendPosts } from '../redux/postSlice';
      constructor(){
          super();
         this.handleChange.bind(this);
-        this.handleSubmit.bind(this);
+        // this.handleSubmit.bind(this);
      }
 
      
@@ -20,6 +20,7 @@ import { sendPosts } from '../redux/postSlice';
 
      handleChange = (e) => {
          const target = e.target
+         console.log(this)
          this.setState({
              formInput: {
                  ...this.state.formInput,
@@ -31,14 +32,15 @@ import { sendPosts } from '../redux/postSlice';
      handleSubmit = (e, formInput) => {
          e.preventDefault();
          this.props.addPost(formInput)
-        alert("A post was submitted: ")
+        alert("Your post was submitted!")
         this.setState({
             formInput: {
-            username: "",
-            image: ""
+                username: "",
+                image: ""
             }
         })
-     }
+         
+    }
     
    render() {
      return (

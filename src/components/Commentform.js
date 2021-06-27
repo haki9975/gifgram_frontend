@@ -33,9 +33,9 @@ class CommentForm extends React.Component {
 
     handleSubmit = (e, formInput) => {
         e.preventDefault();
+        this.props.addComment(formInput)
         console.log(this.state)
         alert("A comment was submitted: " + this.state.formInput.body);
-        this.props.addComments(formInput)
         this.setState({
             formInput: {
                 username: "",
