@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux';
+import { sendComments } from '../redux/commentsSlice'
 
 class Commentform extends React.Component {
     state = {

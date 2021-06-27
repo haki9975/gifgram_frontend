@@ -1,9 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const sendPosts = createAsyncThunk(
-    'posts/newPost',
+export const sendComments = createAsyncThunk(
+    'comments/newComment',
     async (formInput) => {
-        const response = await fetch('http://localhost:3000/posts',
+        const response = await fetch('http://localhost:3000/comments',
         {
             method: "POST",
             headers: {
@@ -14,16 +14,14 @@ export const sendPosts = createAsyncThunk(
         const data = await response.json()
         return data
     }
-
 )
 
 const commentsSlice = createSlice({
     name: 'comments',
     initialState: [],
-    reducers: {
-        setComments(state, action) {
-            return state = action.payload
-        }
+    reducers: {},
+    extraReducers: (builder) => {
+
     }
 })
 

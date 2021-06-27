@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-//import  fetchPosts  from './asynch';
+
 
 export const fetchPosts = createAsyncThunk(
     'posts/getPosts',
@@ -12,12 +12,10 @@ export const fetchPosts = createAsyncThunk(
     }
 )
 
-
-
-export const sendComments = createAsyncThunk(
-    'comments/newComment',
+export const sendPosts = createAsyncThunk(
+    'posts/newPost',
     async (formInput) => {
-        const response = await fetch('http://localhost:3000/comments',
+        const response = await fetch('http://localhost:3000/posts',
         {
             method: "POST",
             headers: {
@@ -28,10 +26,8 @@ export const sendComments = createAsyncThunk(
         const data = await response.json()
         return data
     }
+
 )
-
-
-
 
 
 const postsSlice = createSlice({
