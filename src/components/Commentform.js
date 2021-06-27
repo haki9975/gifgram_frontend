@@ -11,7 +11,7 @@ class Commentform extends React.Component {
         this.handleSubmit.bind(this);
     }
 
-    componentDidMount(){}
+    
         
     handleChange = (e) => {
         console.log(e)
@@ -54,4 +54,12 @@ class Commentform extends React.Component {
     
 }
 
-export default Commentform;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addComment: (comment) => {
+            dispatch(sendComments(comment))
+        }
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Commentform);
