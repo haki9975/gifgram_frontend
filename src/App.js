@@ -3,7 +3,6 @@ import React from 'react';
  import { Provider } from 'react-redux';
  import store from './redux/store';
 import Posts from './components/Posts';
-import Postform from './components/Postform';
 import NavBar from './components/Navbar';
 import {
   BrowserRouter as Router,
@@ -21,8 +20,9 @@ function App() {
     <Provider store={store} >
      <div className="App">
         <Router>
+         <NavBar></NavBar>
          <Posts />
-         <Postform />
+         
         </Router>
      </div>
      </Provider >
