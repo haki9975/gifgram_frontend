@@ -21,9 +21,12 @@ const commentsSlice = createSlice({
     initialState: [],
     reducers: {},
     extraReducers: (builder) => {
+        builder.addCase(sendComments.fulfilled, (state, action) => {
+            return state = action.payload
+        })
 
     }
 })
 
-export const { setComments } = commentsSlice.actions
+
 export default commentsSlice.reducer

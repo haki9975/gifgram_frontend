@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { sendComments } from '../redux/commentsSlice'
+import { sendComments } from '../redux/commentSlice'
 
 class Commentform extends React.Component {
     state = {
@@ -21,24 +21,22 @@ class Commentform extends React.Component {
     handleChange = (e) => {
         console.log(e)
         const target = e.target;
-        // const username = target.username
-        // const body = target.body
-            this.setState({
-            [target.name]: target.value
+        this.setState({
+           formInput: {
+               ...this.state.formInput,
+               [target.name]: target.value
+           }
         })
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        alert("A comment was submitted: " + this.state.body);
-        //  submitComment //Call .fetch() here to send comment to DB
- 
-
-        
-        
+        alert("A comment was submitted: " + this.state.formInput.body);
         this.setState({
-            username: "",
-            body: ""
+            formInput: {
+                username: "",
+                body: ""
+            }
         })
     }
 

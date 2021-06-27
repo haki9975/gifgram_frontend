@@ -34,7 +34,7 @@ import { sendPosts } from '../redux/postSlice';
          this.props.addPost(formInput)
         alert("A post was submitted: ")
         this.setState({
-            post: {
+            formInput: {
             username: "",
             image: ""
             }
