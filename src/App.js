@@ -25,15 +25,14 @@ function App() {
         <Router>
          <NavBar></NavBar>
           <Switch>
-            <Route path="/home">
-              <Home />
-            </Route>
-            <Route path="/posts">
-              <Posts />
-            </Route>
-            <Route path="/post/new">
-              <Postform />
-            </Route>
+            <Route path="/home" component={Home } />
+              
+            <Route path="/posts" component={Posts } />
+                       
+            <Route path="/post/new" component={Postform } />
+            
+
+            <Route path="/" component={ Home  } />
 
           </Switch>
         </Router>
