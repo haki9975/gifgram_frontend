@@ -61,7 +61,7 @@ function MenuAppBar() {
           >
             <MenuIcon />
           </IconButton>
-              <Menu
+         <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}
                 anchorOrigin={{
@@ -76,12 +76,12 @@ function MenuAppBar() {
                 open={open}
                 onClose={handleClose}
               >
-            <ButtonGroup
+             <ButtonGroup
                 orientation="vertical"
                 color="primary"
                 aria-label="vertical contained primary button group"
                 variant="text"
-            >
+             >
                 <MenuItem onClick={handleClose}>
                   <Link to="/home">
                     <Button id="home">Home</Button>
@@ -97,8 +97,8 @@ function MenuAppBar() {
                     <Button id="newPost">Add Post</Button>
                   </Link>
                 </MenuItem>
-            </ButtonGroup>
-              </Menu>
+             </ButtonGroup>
+         </Menu>
             </div>
           }
         </Toolbar>
