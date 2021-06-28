@@ -6,14 +6,13 @@ import Posts from './components/Posts';
 import NavBar from './components/Navbar';
 import Postform from './components/Postform';
 import Home from './components/Home'
-
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom"
-
+import  MenuAppBar  from './components/AppBar'
 
 
 
@@ -23,7 +22,8 @@ function App() {
     <Provider store={store} >
      <div className="App">
         <Router>
-         <NavBar></NavBar>
+         <MenuAppBar ></MenuAppBar>
+         {/* <NavBar></NavBar> */}
           <Switch>
             <Route path="/home" component={ Home } />
               

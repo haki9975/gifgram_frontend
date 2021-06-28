@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchPosts } from '../redux/postSlice';
 import Comments from './Comments';
 import Commentform from './Commentform';
-
+import { AppBar } from './AppBar';
 
 // import Card from './Card';
 
