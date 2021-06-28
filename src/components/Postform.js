@@ -1,6 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import { sendPosts } from '../redux/postSlice';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom"
 
  class Postform extends React.Component {
      state = { 
@@ -39,7 +45,7 @@ import { sendPosts } from '../redux/postSlice';
                 image: ""
             }
         })
-         
+         this.props.history.push("/posts")
     }
     
    render() {

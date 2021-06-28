@@ -19,10 +19,10 @@ function Posts() {
 
     useEffect(() => {
         dispatch(fetchPosts())
-        return () => {
-            
-        }
+        return () => {}
     }, [])
+
+    
 
  
     return (

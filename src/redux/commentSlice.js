@@ -1,4 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { fetchPosts } from "./postSlice";
+import { dispatch } from "react-redux";
 
 export const sendComments = createAsyncThunk(
     'comments/newComment',
@@ -12,6 +14,7 @@ export const sendComments = createAsyncThunk(
             body: JSON.stringify(formInput)
         })
         const data = await response.json()
+        fetchPosts()
         return data
     }
 )

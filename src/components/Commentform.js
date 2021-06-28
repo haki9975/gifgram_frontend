@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import { sendComments } from '../redux/commentSlice'
+import { fetchPosts } from "../redux/postSlice";
+
 
 class CommentForm extends React.Component {
     state = {
@@ -20,7 +22,6 @@ class CommentForm extends React.Component {
     
         
     handleChange = (e) => {
-        
         const target = e.target;
         this.setState({
            formInput: {
@@ -34,16 +35,16 @@ class CommentForm extends React.Component {
     handleSubmit = (e, formInput) => {
         e.preventDefault();
         this.props.addComment(formInput)
-        console.log(this.state)
+        this.props.getPosts(formInput)
         alert("A comment was submitted: " + this.state.formInput.body);
         this.setState({
             formInput: {
-                username: "",
+               username: "",
                 body: "",
                 post_id: ""
             }
         })
-    }
+     }
 
         render(){
             return(
@@ -51,9 +52,9 @@ class CommentForm extends React.Component {
                    <b><p>Add Comment:</p></b>
                    <form  onSubmit={(e) => this.handleSubmit(e, this.state.formInput)}>
                         <label >Username:</label><br />
-                        <input id={this.props.id} type="text" name="username" value={this.state.username} onChange={this.handleChange} /><br />
+                        <input id={this.props.id} type="text" name="username" value={this.state.formInput.username} onChange={this.handleChange} /><br />
                         <label>Comment:</label><br />
-                        <textarea id={this.props.id} name="body" value={this.state.body} onChange={this.handleChange} /><br />
+                        <textarea id={this.props.id} name="body" value={this.state.formInput.body} onChange={this.handleChange} /><br />
                         <button type="submit">Submit</button>
                     </form>
                 </div>
@@ -62,10 +63,15 @@ class CommentForm extends React.Component {
     
 }
 
+
+
 const mapDispatchToProps = (dispatch) => {
     return {
         addComment: (comment) => {
-            dispatch(sendComments(comment))
+            dispatch(sendComments(comment))        
+        },
+        getPosts: () => {
+            dispatch(fetchPosts())
         }
     }
 }

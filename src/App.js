@@ -25,14 +25,14 @@ function App() {
         <Router>
          <NavBar></NavBar>
           <Switch>
-            <Route path="/home" component={Home } />
+            <Route path="/home" component={ Home } />
               
-            <Route path="/posts" component={Posts } />
+            <Route path="/posts" component={ Posts } />
                        
-            <Route path="/post/new" component={Postform } />
+            <Route path="/post/new" component={ Postform } />
             
 
-            <Route path="/" component={ Home  } />
+            <Route path="/" component={ Home } />
 
           </Switch>
         </Router>
