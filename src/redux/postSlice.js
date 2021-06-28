@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk, createAction } from '@reduxjs/toolkit'
 import Posts from '../components/Posts'
 
 
@@ -12,6 +12,28 @@ export const fetchPosts = createAsyncThunk(
         
     }
 )
+
+export const likePayload = createAction("PATCH_LIKES")
+
+export const sendLike = createAsyncThunk(
+    'posts/addLikes',
+    async (like) => {
+        console.log(like)
+        const response = await fetch(`http://localhost:3000/posts/${like.payload.id}`,
+        {
+            method: "PATCH",
+            headers: {
+                "Content-type":"application/json"
+            },
+            body: JSON.stringify(like)
+        })
+        const data = await response.json()
+        fetchPosts()
+        return data
+    }
+)
+
+
 
 export const sendPosts = createAsyncThunk(
     'posts/newPost',
@@ -42,6 +64,9 @@ const postsSlice = createSlice({
             
             return state = action.payload
         })
+        .addCase(sendLike.fulfilled), (state, action) => {
+            console.log(state, action)
+        }
         // .addCase(sendPosts.fulfilled, (state, action))
         // console.log(action.payload)
         // return action.payload
