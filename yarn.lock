@@ -50,6 +50,11 @@
   "resolved" "https://registry.npmjs.org/@emotion/hash/-/hash-0.8.0.tgz"
   "version" "0.8.0"
 
+"@fontsource/roboto@^4.4.5":
+  "integrity" "sha512-e3s7BF8MDBLpkA2r6lnl5PMnllF0McVvpolK9h2zzvVJw2WPexP1GTgMKHISlglYZRij2lKg/ZjQcIUUYDsAXg=="
+  "resolved" "https://registry.npmjs.org/@fontsource/roboto/-/roboto-4.4.5.tgz"
+  "version" "4.4.5"
+
 "@jest/types@^26.6.2":
   "integrity" "sha512-fC6QCp7Sc5sX6g8Tvbmj4XUTbyrik0akgRy03yjXbQaBWWNWGE7SGtJk98m0N8nzegD/7SggrUlivxo5ax4KWQ=="
   "resolved" "https://registry.yarnpkg.com/@jest/types/-/types-26.6.2.tgz"
