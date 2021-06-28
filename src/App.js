@@ -13,6 +13,7 @@ import {
   Link
 } from "react-router-dom"
 import  MenuAppBar  from './components/AppBar'
+import Grid from "@material-ui/core/Grid"
 
 
 
@@ -22,19 +23,16 @@ function App() {
     <Provider store={store} >
      <div className="App">
         <Router>
-         <MenuAppBar ></MenuAppBar>
-         {/* <NavBar></NavBar> */}
+         <MenuAppBar />
+        <Grid container justify='center'>
           <Switch>
             <Route path="/home" component={ Home } />
-              
             <Route path="/posts" component={ Posts } />
-                       
             <Route path="/post/new" component={ Postform } />
-            
-
             <Route path="/" component={ Home } />
 
           </Switch>
+          </Grid>
         </Router>
      </div>
      </Provider >

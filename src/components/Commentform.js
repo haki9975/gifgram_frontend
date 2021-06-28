@@ -10,13 +10,18 @@ class CommentForm extends React.Component {
         username: "",
         body: "",
         post_id: "",
-        comments: []
-        }
+        },
+        showForm: {show: false}
     };
     constructor(props){
         super(props);
         this.handleChange.bind(this);
         this.handleSubmit.bind(this);
+    }
+
+    handleToggle = () => {
+        const form = this.state.showForm
+        return(form.show ? form.show = false : form.show = true)
     }
 
     
@@ -47,8 +52,11 @@ class CommentForm extends React.Component {
      }
 
         render(){
+            const formToggle = this.state.showForm
             return(
+                
                 <div>
+                    {console.log(formToggle)}
                    <b><p>Add Comment:</p></b>
                    <form  onSubmit={(e) => this.handleSubmit(e, this.state.formInput)}>
                         <label >Username:</label><br />
@@ -56,8 +64,10 @@ class CommentForm extends React.Component {
                         <label>Comment:</label><br />
                         <textarea id={this.props.id} name="body" value={this.state.formInput.body} onChange={this.handleChange} /><br />
                         <button type="submit">Submit</button>
+                    <button onClick={this.handleToggle}>Hello</button>
                     </form>
                 </div>
+                
             )
         }
     
