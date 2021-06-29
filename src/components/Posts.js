@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchPosts, sendLike, likePayload } from '../redux/postSlice';
+import { fetchPosts } from '../redux/postSlice';
 import SimpleCard from './Card';
 import PostCard from './PostsCard';
 
