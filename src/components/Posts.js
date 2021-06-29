@@ -62,25 +62,6 @@ function Posts() {
         
     )
 }
-
-
-
-
 export default Posts;
 
 
-// { posts.map((p) => { 
-//     console.log(p.likes)
-//     return(
-//     <div key={p.id} id={p.id}> 
-//      <h1 >{p.username}</h1><br></br>
-//     <img src={p.image} alt="A beautiful scene" width="500" height="500"></img>
-//     <div><p>{p.likes} people like this</p><Button color="secondary"  onClick={() => handleClick(p.likes, p.id)}>+</Button>      </div>
-//     <h1>Comments</h1>
-//     <div>{p.comments.map((c) => (<Comments username={c.username} body={c.body} date={c.date} key={c.id} id={p.id}></Comments>))}</div>
-//     <div className="commentFormDiv">
-//     <Button variant="contained" color="primary"  onClick={() => setFormBool( !formBool )}>Add Comment</Button>
-//     {formBool ? <Commentform id={p.id} ></Commentform> : console.log(formBool) }
-//     </div>
-//     </div> 
-// )})}>

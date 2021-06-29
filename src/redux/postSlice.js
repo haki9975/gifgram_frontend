@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk, createAction } from '@reduxjs/toolkit'
-import Posts from '../components/Posts'
+import PostCard from '../components/PostsCard'
 
 
 
@@ -7,9 +7,9 @@ export const fetchPosts = createAsyncThunk(
     'posts/getPosts',
     async () => {
         const response = await fetch('http://localhost:3000/posts')
-        const posts = await response.json()
-        return posts
-        
+        const data = await response.json()
+        console.log(data ,"hello from fethPosts!") 
+        return data
     }
 )
 
@@ -18,7 +18,6 @@ export const likePayload = createAction("PATCH_LIKES")
 export const sendLike = createAsyncThunk(
     'posts/addLikes',
     async (like) => {
-        console.log(like)
         const response = await fetch(`http://localhost:3000/posts/${like.payload.id}`,
         {
             method: "PATCH",
@@ -28,6 +27,7 @@ export const sendLike = createAsyncThunk(
             body: JSON.stringify(like)
         })
         const data = await response.json()
+        console.log(data, "hello from sendLike")
         return data
     }
 )
@@ -60,16 +60,18 @@ const postsSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(fetchPosts.fulfilled, (state, action) => {
-            
+            console.log(action, "extra reducer!")
             return state = action.payload
         })
-        .addCase(sendLike.fulfilled), (state, action) => {
-            console.log(state, action)
+        builder.addCase(sendLike.fulfilled, (state, action) => {
+            console.log(state, action, "extraextra reducer")
+            
+            // return state = action.payload
         }
-        // .addCase(sendPosts.fulfilled, (state, action))
-        // console.log(action.payload)
-        // return action.payload
-    }
+        // builder.addCase(sendPosts.fulfilled), (state, action))
+        // // console.log(action.payload)
+        // // return action.payload
+        )}
 })
 
 
