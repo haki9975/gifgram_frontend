@@ -5,6 +5,7 @@ import React from 'react';
 import Posts from './components/Posts';
 import Postform from './components/Postform';
 import Home from './components/Home'
+import about from './components/About'
 import {
   BrowserRouter as Router,
   Switch,
@@ -27,6 +28,7 @@ function App() {
             <Route path="/home" component={ Home } />
             <Route path="/posts" component={ Posts } />
             <Route path="/post/new" component={ Postform } />
+            <Route path="/about" component={ about } />
             <Route path="/" component={ Home } />
           </Switch>
            </Grid>

@@ -1,6 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { fetchPosts } from "./postSlice";
 import { dispatch } from "react-redux";
+import PostCard from "../components/PostsCard";
+import Comments from "../components/Comments";
 
 export const sendComments = createAsyncThunk(
     'comments/newComment',
@@ -14,7 +16,8 @@ export const sendComments = createAsyncThunk(
             body: JSON.stringify(formInput)
         })
         const data = await response.json()
-        fetchPosts()
+        console.log(data, "send comments")
+        
         return data
     }
 )
@@ -25,7 +28,8 @@ const commentsSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(sendComments.fulfilled, (state, action) => {
-            return state = action.payload
+            console.log(state, "this is state")
+            console.log(action, "this is action")
         })
 
     }

@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { sendComments } from '../redux/commentSlice'
 import { fetchPosts } from "../redux/postSlice";
 import Button from '@material-ui/core/Button';
+import PostCard from './PostsCard';
+import Comments from './Comments';
 
 
 class CommentForm extends React.Component {
@@ -32,7 +34,6 @@ class CommentForm extends React.Component {
 
     handleSubmit = (e, formInput) => {
         e.preventDefault();
-        console.log(formInput)
         this.props.addComment(formInput)
         this.props.getPosts(formInput)
         alert("A comment was submitted: " + this.state.formInput.body);
@@ -71,7 +72,8 @@ class CommentForm extends React.Component {
 const mapDispatchToProps = (dispatch) => {
     return {
         addComment: (comment) => {
-            dispatch(sendComments(comment))        
+            dispatch(sendComments(comment))
+                   
         },
         getPosts: () => {
             dispatch(fetchPosts())

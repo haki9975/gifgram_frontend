@@ -9,6 +9,7 @@ function PostCard(props){
     const dispatch = useDispatch()
     const [formBool, setFormBool] = useState(false)
     const [counter, setCounter] = useState(props.likes)
+    const [comments, setComments] = useState(props.comments)
 
     const handleClick = ( ) => {
        setCounter(counter + 1)
@@ -17,19 +18,19 @@ function PostCard(props){
         dispatch(sendLike(a))
     }
  
-
+    
     return(
         <div key={props.id} id={props.id}> 
 
           <h1 >{props.username}</h1><br></br>
           <img src={props.image} alt="A beautiful scene" width="500" height="500"></img>
-          <div><p>{counter} people like this</p><Button color="secondary"  onClick={() => { handleClick() }}>+</Button></div>
+          <div><p>{counter} people like this</p> <h1><Button color="secondary" textSizeLarge=".MuiButton-textSizeLarge" variant="outlined" onClick={() => { handleClick() }}>+</Button></h1> </div>
         
           <h1>Comments</h1>
-          <div>{props.comments.map((c) => (<Comments username={c.username} body={c.body} date={c.date} key={c.id} id={props.id}></Comments>))}</div>
+          <div>{comments.map((c) => (<Comments username={c.username} body={c.body} date={c.date} key={c.id} id={props.id}></Comments>))}</div>
           <div className="commentFormDiv">
           <Button variant="contained" color="primary"  onClick={() => setFormBool( !formBool )}>Add Comment</Button>
-          {formBool ? <Commentform id={props.id} ></Commentform> : formBool }
+          {formBool ? <Commentform id={props.id} formBool={formBool} ></Commentform> : formBool }
           </div>
         </div>
     )

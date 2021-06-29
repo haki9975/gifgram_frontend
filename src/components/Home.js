@@ -1,5 +1,7 @@
 import React from 'react';
 import SimpleCard from './Card';
+import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom'
 
 function Home() {
     const image =  <img src={"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Holga_120_GCFN.jpg/1280px-Holga_120_GCFN.jpg"} width="500px" alt={"a cheap holga camera"}></img>
@@ -17,6 +19,7 @@ function Home() {
           <SimpleCard children={title} />
           <SimpleCard children={image} />
           <SimpleCard children={text} />
+          <SimpleCard children={<Button variant="contained" color="primary" href="/about" >About</Button>} />
         </div>
     )
 }

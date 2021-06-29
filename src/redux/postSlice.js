@@ -61,6 +61,7 @@ const postsSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(fetchPosts.fulfilled, (state, action) => {
             console.log(action, "extra reducer!")
+            console.log(state, "is this state")
             return state = action.payload
         })
         builder.addCase(sendLike.fulfilled, (state, action) => {
