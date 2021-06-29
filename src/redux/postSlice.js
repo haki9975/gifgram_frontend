@@ -64,14 +64,9 @@ const postsSlice = createSlice({
             return state = action.payload
         })
         builder.addCase(sendLike.fulfilled, (state, action) => {
-            console.log(state, action, "extraextra reducer")
-            
-            // return state = action.payload
+                    
         }
-        // builder.addCase(sendPosts.fulfilled), (state, action))
-        // // console.log(action.payload)
-        // // return action.payload
-        )}
+    )}
 })
 
 

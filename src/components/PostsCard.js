@@ -1,37 +1,22 @@
-import React, { useEffect, useState }  from "react";
-import { useSelector, useDispatch } from "react-redux";
-import {  sendLike, likePayload, fetchPosts } from '../redux/postSlice';
+import React, { useState }  from "react";
+import {  useDispatch } from "react-redux";
+import { sendLike, likePayload } from '../redux/postSlice';
 import Button from '@material-ui/core/Button';
 import Comments from './Comments';
 import Commentform from './Commentform';
 
 function PostCard(props){
-    const posts = useSelector(state => state.posts)
     const dispatch = useDispatch()
     const [formBool, setFormBool] = useState(false)
     const [counter, setCounter] = useState(props.likes)
 
     const handleClick = ( ) => {
        setCounter(counter + 1)
-        //  console.log("props",props.likes)
-         console.log(counter +1, "counter")
-        //  handleLike(counter + 1)
+        console.log(counter +1, "counter")
         const a = likePayload({id: props.id, likes: counter+1})
-        
         dispatch(sendLike(a))
-        
-       
     }
-
-    useEffect(() => {
-
-        return () => {
-            
-        }
-    }, [counter])
-
-
-
+ 
 
     return(
         <div key={props.id} id={props.id}> 
