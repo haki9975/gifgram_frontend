@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk, createAction } from '@reduxjs/toolkit'
-import PostCard from '../components/PostsCard'
+
 
 
 

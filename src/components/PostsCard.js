@@ -1,5 +1,5 @@
 import React, { useState }  from "react";
-import {  useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { sendLike, likePayload } from '../redux/postSlice';
 import Button from '@material-ui/core/Button';
 import Comments from './Comments';
