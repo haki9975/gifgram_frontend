@@ -18,8 +18,7 @@ function Posts() {
 
     const posts = useSelector(state => state.posts)
     const dispatch = useDispatch()
-    const [formBool, setFormBool] = useState(false)
-    // const [counter, setCounter] = useState(0)
+
 
 
     useEffect(() => {
@@ -46,7 +45,8 @@ function Posts() {
             id={p.id}
             username={p.username} 
             image={p.image}
-            likes= {p.likes}>
+            likes= {p.likes}
+            comments= {p.comments}>
         </PostCard>
     )})    
  
@@ -54,7 +54,7 @@ function Posts() {
         <div >
             <h1>Posts</h1>
             <SimpleCard children={renderPosts.map((p) => p)}>
-          
+                
             </SimpleCard>
         </div>
            

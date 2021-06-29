@@ -28,7 +28,6 @@ export const sendLike = createAsyncThunk(
             body: JSON.stringify(like)
         })
         const data = await response.json()
-        fetchPosts()
         return data
     }
 )
