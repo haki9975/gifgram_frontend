@@ -8,7 +8,6 @@ export const fetchPosts = createAsyncThunk(
     async () => {
         const response = await fetch('http://localhost:3000/posts')
         const data = await response.json()
-        console.log(data ,"hello from fethPosts!") 
         return data
     }
 )
@@ -27,7 +26,6 @@ export const sendLike = createAsyncThunk(
             body: JSON.stringify(like)
         })
         const data = await response.json()
-        console.log(data, "hello from sendLike")
         return data
     }
 )
@@ -60,9 +58,7 @@ const postsSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(fetchPosts.fulfilled, (state, action) => {
-            console.log(action, "extra reducer!")
-            console.log(state, "is this state")
-            return state = action.payload
+         return state = action.payload
         })
         builder.addCase(sendLike.fulfilled, (state, action) => {
                     
