@@ -6,8 +6,8 @@ import { sendPosts } from '../redux/postSlice';
      state = { 
          formInput: {
          username: "",
-         image: "" },
-         posts: []
+         image: "",
+         likes: 0 }
         }
      constructor(){
          super();
@@ -29,16 +29,18 @@ import { sendPosts } from '../redux/postSlice';
          })
         }
 
-     handleSubmit = (e, formInput) => {
+     handleSubmit = (e) => {
+        //  console.log("submit formI", formInput)
          e.preventDefault();
-         this.props.addPost(formInput)
+         this.props.addPost(this.state.formInput)
         alert("Your post was submitted!")
-        this.setState({
-            formInput: {
-                username: "",
-                image: ""
-            }
-        })
+        // this.setState({
+        //     formInput: {
+        //         username: "",
+        //         image: "",
+        //         likes: 0
+        //     }
+        // })
          this.props.history.push("/posts")
     }
     
@@ -46,7 +48,7 @@ import { sendPosts } from '../redux/postSlice';
      return (
          <div>
              <h1>Post Form</h1>
-             <form onSubmit={(e) => this.handleSubmit(e, this.state.formInput)}>
+             <form onSubmit={e => this.handleSubmit(e)}>
                  <label>Username:</label><br />
                  <input type="text" name="username" value={this.state.formInput.username} onChange={this.handleChange} /><br />
                  <label>Image Source URL:</label><br />
@@ -57,7 +59,7 @@ import { sendPosts } from '../redux/postSlice';
      )
     }
     
-    
+    // <form onSubmit={(e) => this.handleSubmit(e, this.state.formInput), console.log(this.state.formInput)}></form>
 }
 
 const mapDispatchToProps = (dispatch) => {
