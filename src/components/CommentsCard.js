@@ -6,10 +6,9 @@ import CommentForm from './Commentform'
 import SimpleCard from './Card';
 
 function CommentsCard(props){
-     const posts = useSelector(state => state.posts)
-    const dispatch = useDispatch()
-    // // const comments = useSelector(state=> state.)
-    const comments = useSelector(state => state.comments)
+    const posts = useSelector(state => state.posts)
+   const dispatch = useDispatch()
+   const comments = useSelector(state => state.comments)
 
     const filteredComments = comments.filter(c => c.post_id === props.id)
 
@@ -34,17 +33,10 @@ function CommentsCard(props){
 
 
     return(
-        <div>
+    <div>
         {console.log(filteredComments, "okay")}
         <SimpleCard children={renderComments.map(c => c)}/>
-        {/* <SimpleCard children={console.log(renderComments)} > */}
-        {/* <div>
-          <div> 
-            {comments.map((c) => (<Comments username={props.username} body={props.body} key={c.id} id={props.id}></Comments>))}
-          </div>
-        </div> */}
-        {/* </SimpleCard> */}
-        </div>
+    </div>
     )
 }
 

@@ -2,7 +2,6 @@ import React, { useState, useEffect }  from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { sendLike, likePayload, fetchPosts } from '../redux/postSlice';
 import Button from '@material-ui/core/Button';
-import Comments from './Comments';
 import Commentform from './Commentform';
 import CommentsCard from './CommentsCard'
 
@@ -11,12 +10,6 @@ function PostCard(props){
     const [formBool, setFormBool] = useState(false)
     const [counter, setCounter] = useState(props.likes)
     const [comments, setComments] = useState(props.comments)
-
-    //     useEffect(() => {
-    //     dispatch(fetchPosts())
-    //     return () => {}
-    // }, [])
- 
 
     const handleClick = ( ) => {
        setCounter(counter + 1)
@@ -34,10 +27,10 @@ function PostCard(props){
           <div><p>{counter} people like this</p> <h1><Button color="secondary"  variant="outlined" onClick={() => { handleClick() }}>+</Button></h1> </div>
         
           <h1>Comments</h1>
-          <div> {/*Render Comment Card Here, Comment card should render the comments */}
-            {/* {comments.map((c) => (<CommentsCard username={c.username} body={c.body} date={c.date} key={c.id} id={props.id}></CommentsCard>))} */}
+          <div> 
+          
            <CommentsCard id={props.id} />
-            {/* {comments.map((c)=> (<CommentsCard comments={c.id}/>)) } */}
+            
           </div>
           <div className="commentFormDiv">
           <Button variant="contained" color="primary"  onClick={() => setFormBool( !formBool )}>Add Comment</Button>

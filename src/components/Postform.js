@@ -30,18 +30,10 @@ import { sendPosts } from '../redux/postSlice';
         }
 
      handleSubmit = (e) => {
-        //  console.log("submit formI", formInput)
-         e.preventDefault();
-         this.props.addPost(this.state.formInput)
+        e.preventDefault();
+        this.props.addPost(this.state.formInput)
         alert("Your post was submitted!")
-        // this.setState({
-        //     formInput: {
-        //         username: "",
-        //         image: "",
-        //         likes: 0
-        //     }
-        // })
-         this.props.history.push("/posts")
+        this.props.history.push("/posts")
     }
     
    render() {
@@ -58,8 +50,6 @@ import { sendPosts } from '../redux/postSlice';
          </div>
      )
     }
-    
-    // <form onSubmit={(e) => this.handleSubmit(e, this.state.formInput), console.log(this.state.formInput)}></form>
 }
 
 const mapDispatchToProps = (dispatch) => {
