@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import { sendPosts } from '../redux/postSlice';
+import Button from '@material-ui/core/Button';
 
  class Postform extends React.Component {
      state = { 
@@ -45,7 +46,7 @@ import { sendPosts } from '../redux/postSlice';
                  <input type="text" name="username" value={this.state.formInput.username} onChange={this.handleChange} /><br />
                  <label>Image Source URL:</label><br />
                  <input type="text" name="image" value={this.state.formInput.image} onChange={this.handleChange}/><br />
-                 <button type="submit">Submit</button>
+                 <Button variant="contained" type="submit" color="primary">Submit</Button>
              </form>
          </div>
      )

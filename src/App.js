@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
- import { Provider } from 'react-redux';
- import store from './redux/store';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 import Posts from './components/Posts';
 import Postform from './components/Postform';
 import Home from './components/Home'
