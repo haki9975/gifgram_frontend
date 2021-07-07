@@ -11,8 +11,6 @@ function PostCard(props){
     const [comments, setComments] = useState(props.comments)
 
     const handleClick = ( ) => {
-        console.log(props.likes +1, "addition")
-        console.log(props.likes, "props.likes")
         const a = likePayload({id: props.id, likes: props.likes +1})
         dispatch(sendLike(a))
     }
