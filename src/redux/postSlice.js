@@ -26,6 +26,7 @@ export const sendLike = createAsyncThunk(
             body: JSON.stringify(like)
         })
         const data = await response.json()
+        console.log(data, "data")
         return data
     }
 )
@@ -44,6 +45,7 @@ export const sendPosts = createAsyncThunk(
             body: JSON.stringify(formInput)
         })
         const data = await response.json()
+    
         return data
     }
 
@@ -58,10 +60,15 @@ const postsSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(fetchPosts.fulfilled, (state, action) => {
+            
          return state = action.payload
+         
         })
         builder.addCase(sendLike.fulfilled, (state, action) => {
-                    
+            const likedPost = action.payload
+            console.log(likedPost, action.payload)
+           let a = state.map(p => p.id == action.payload.id ? p = action.payload : p )
+           return a
         }
     )}
 })

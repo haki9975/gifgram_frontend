@@ -15,8 +15,6 @@ export const sendComments = createAsyncThunk(
             body: JSON.stringify(formInput)
         })
         const data = await response.json()
-        console.log(data, "send comments")
-        
         return data
     }
 )

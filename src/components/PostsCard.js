@@ -8,13 +8,12 @@ import CommentsCard from './CommentsCard'
 function PostCard(props){
     const dispatch = useDispatch()
     const [formBool, setFormBool] = useState(false)
-    const [counter, setCounter] = useState(props.likes)
     const [comments, setComments] = useState(props.comments)
 
     const handleClick = ( ) => {
-       setCounter(counter + 1)
-        console.log(counter +1, "counter")
-        const a = likePayload({id: props.id, likes: counter+1})
+        console.log(props.likes +1, "addition")
+        console.log(props.likes, "props.likes")
+        const a = likePayload({id: props.id, likes: props.likes +1})
         dispatch(sendLike(a))
     }
  
@@ -24,7 +23,7 @@ function PostCard(props){
 
           <h1 >{props.username}</h1><br></br>
           <img src={props.image} alt="A beautiful scene" width="500" height="500"></img>
-          <div><p>{counter} people like this</p> <h1><Button color="secondary"  variant="outlined" onClick={() => { handleClick() }}>+</Button></h1> </div>
+          <div><p>{props.likes} people like this</p> <h1><Button color="secondary"  variant="outlined" onClick={() => { handleClick() }}>+</Button></h1> </div>
         
           <h1>Comments</h1>
           <div> 

@@ -34,7 +34,7 @@ function CommentsCard(props){
 
     return(
     <div>
-        {console.log(filteredComments, "okay")}
+        
         <SimpleCard children={renderComments.map(c => c)}/>
     </div>
     )
