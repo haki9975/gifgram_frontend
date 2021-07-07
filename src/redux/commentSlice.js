@@ -34,7 +34,7 @@ const commentsSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(sendComments.fulfilled, (state, action) => {
-            
+            state.push(action.payload)
         })
         builder.addCase(fetchComments.fulfilled, (state, action) =>{
             return state = action.payload
